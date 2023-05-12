@@ -1,0 +1,68 @@
+### Get all the cities
+GET http://localhost:8080/cities
+
+### Get a given city
+GET http://localhost:8080/cities/Nantes
+
+### Get all the sport facility in france from a given sport
+GET http://localhost:8080/cities/sport/Court de tennis
+
+### Get all the sport facility in a given city from a given sport
+GET http://localhost:8080/cities/sport/Court de tennis/Nantes
+
+### Update test
+PATCH http://localhost:8080/cities/update
+Content-Type: application/json
+
+{
+  "nomVille": "Paris",
+  "cityFacilities": [{
+    "id": "I441090061",
+    "nom": "College Francois d'Amboise",
+    "cityName": "Nantes",
+    "family": "Salle multisports",
+    "type": "Salle multisports (gymnase)"
+  }],
+  "population": 1111
+}
+
+### delete a city entity
+DELETE http://localhost:8080/cities/delete/Nantes
+
+
+### create a city entity
+POST http://localhost:8080/cities/create
+Content-Type: application/json
+
+{
+  "nomVille": "Test",
+  "cityFacilities": [],
+  "population": 1000000
+}
+
+### Get all the sport facilities
+GET http://localhost:8080/sportFacilities
+
+### Get a sport facilities corresponding to a given id
+GET http://localhost:8080/sportFacilities/I010040002
+
+### Get all the type of sport facilities
+GET http://localhost:8080/sportFacilities/equipementType
+
+### Get all the type of sport family
+GET http://localhost:8080/sportFacilities/equipementFamily
+
+### Create a sport facility
+POST http://localhost:8080/sportFacilities/create
+Content-Type: application/json
+
+{
+  "id": "I010040007",
+  "nom": "College Francois d'Amboise",
+  "cityName": "Nantes",
+  "family": "Salle multisports",
+  "type": "Salle multisports (gymnase)"
+}
+
+### Delete a given sport facility from the DAO
+DELETE http://localhost:8080/sportFacilities/delete/I010330004
